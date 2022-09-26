@@ -1,6 +1,6 @@
 html,
 body {
-  padding: 0;
+ padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -15,12 +15,28 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.section{
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.arrow-down{
+  font-size: 1.5em;
+  color:rgba(0,0,0, 0.5);
+  animation: arrow 3s infinite ease;
+}
+
+@keyframes arrow {
+  from{
+    transform: translate(0,0px);
+    opacity:0
   }
-  body {
-    color: white;
-    background: black;
+
+  to{
+    transform: translate(0,20px);
+    opacity: 1;
   }
+  
 }
