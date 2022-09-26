@@ -1,14 +1,17 @@
 import { FC } from "react";
 import { LayoutProps } from "./layot";
 
-const Section:FC<LayoutProps> = ({children})=>{
-return<>
-<section className="section d-flex  align-items-center">
+const Section: FC<LayoutProps> = ({ children, background }) => {
+  return (
+    <>
+      <section
+        style={{ background: background }}
+        className="section d-flex  justify-content-center align-items-center"
+      >
+        {children}
+      </section>
+    </>
+  );
+};
 
-{children}
-</section>
-
-</>
-}
-
-export default Section
+export default Section;

@@ -1,28 +1,38 @@
-import { NextPage } from "next"
-import { Container, Row, Col } from "react-bootstrap"
-import Section from "../Layouts/section"
+import { NextPage } from "next";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { Projects, projects } from "../interfaces/interface";
+import Section from "../Layouts/section";
+import { Cards } from "./subComponents/card";
 
-const Projects:NextPage = () =>{
-return<>
-<Section>
-<Container>
-      <Row xs={2} md={4} lg={6}>
-        <Col>1 of 2</Col>
-        <Col>2 of 2</Col>
-      </Row>
-      <Row xs={1} md={2}>
-        <Col>1 of 3</Col>
-        <Col>2 of 3</Col>
-        <Col>3 of 3</Col>
-      </Row>
-      <Row xs="auto">
-        <Col>1 of 3</Col>
-        <Col>2 of 3</Col>
-        <Col>3 of 3</Col>
-      </Row>
-    </Container>
-</Section>
-</>
-}
+const Projects: NextPage = () => {
+  return (
+    <>
+      <Section background="red">
+        <Container className="text-center m-5 ">
+          <h1 style={{ fontSize: "60px" }} className="mt-3">
+            Projects
+          </h1>
+          <Row>
+            {projects.map((value: Projects) => {
+              return (
+                <>
+                  <Col sm="12" md="6" lg="4" className="py-3 text-center ">
+                    <Cards {...value} />
+                  </Col>
+                </>
+              );
+            })}
+          </Row>
+          <Button
+            style={{ width: "40%" }}
+            className="btn btn-info text-dark m-2"
+          >
+            View More
+          </Button>
+        </Container>
+      </Section>
+    </>
+  );
+};
 
-export default Projects
+export default Projects;

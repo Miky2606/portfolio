@@ -1,42 +1,54 @@
+@font-face {
+  font-family: Hacked;
+  src: url(https://hackedfont.com/HACKED.ttf) format("truetype");
+}
+
 html,
 body {
- padding: 0;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+  font-size: 1em;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
   box-sizing: border-box;
+
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 }
 
-.section{
-  width: 100vw;
+.section {
+  width: 100%;
   height: 100vh;
   position: sticky;
   top: 0;
+  background-size: cover;
+  font-family: Hacked;
 }
 
-.arrow-down{
+.arrow-down {
   font-size: 1.5em;
-  color:rgba(0,0,0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   animation: arrow 3s infinite ease;
+}
+.icons {
+  font-size: 1.5em;
+}
+
+.github {
+  color: black;
+}
+
+.instagram {
+  color: rgb(240, 94, 118);
 }
 
 @keyframes arrow {
-  from{
-    transform: translate(0,0px);
-    opacity:0
+  from {
+    transform: translate(0, 0px);
+    opacity: 0;
   }
 
-  to{
-    transform: translate(0,20px);
+  to {
+    transform: translate(0, 20px);
     opacity: 1;
   }
-  
 }

@@ -1,27 +1,18 @@
-import { FC } from "react"
-import { Col, Container, Row } from "react-bootstrap"
-import NavbarCustom from "./navbar"
+import { FC } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import NavbarCustom from "./navbar";
 
 export type LayoutProps = {
-    children:React.ReactNode
-}
+  children: React.ReactNode;
+  background?: string;
+};
 
-const Layout: FC<LayoutProps> = ({children})=>{
-return(
-<>
+const Layout: FC<LayoutProps> = ({ children }) => {
+  return (
+    <>
+      <main>{children}</main>
+    </>
+  );
+};
 
-<main>
-
-        
-            {children}
-        
-
-    
-</main>
-
-</>
-)
-
-}
-
-export default Layout
+export default Layout;
