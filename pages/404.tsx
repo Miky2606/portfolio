@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { FaGasPump, FaSadCry } from "react-icons/fa";
-import Section from "./Layouts/section";
+import Section from "../Layouts/section";
 
 const NotFound = () => {
   return (

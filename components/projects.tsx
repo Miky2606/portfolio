@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Projects, projects } from "../interfaces/interface";
 import Section from "../Layouts/section";
-import { Cards } from "./subComponents/card";
-import { TitleTyping } from "./subComponents/title";
+import Cards from "./subComponents/card";
+import TitleTyping from "./subComponents/title";
 
 interface Size {
   width: number;

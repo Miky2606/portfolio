@@ -1,18 +1,11 @@
-export type Projects = {
+  export interface Projects {
     name: string,
     url: string,
     lenguages: string[],
     images: string
 }
 
-
-
-
-
-
-
-
-export const projects: Projects[] = [
+ export const projects: Projects[] = [
     {
         name: "AzulaTCG",
         url: "https://azulatcg-54ggm.ondigitalocean.app/",
@@ -29,8 +22,10 @@ export const projects: Projects[] = [
     }
 ]
 
-export const skill:string[] =[
+ export const skill:string[] =[
 "react", "bootstrap", "css", "ts", "swift", "js", "html", "mongodb", "nextjs"
 ]
 
-export const images: string = "/perfil.jpg"
+ export const images: string = "/perfil.jpg"
+
+ 

@@ -5,7 +5,7 @@ import Section from "../Layouts/section";
 import { FaArrowDown, FaGithub, FaInstagram } from "react-icons/fa";
 import { images } from "../interfaces/interface";
 
-import { TitleTyping } from "./subComponents/title";
+import TitleTyping from "./subComponents/title";
 import Icons from "./subComponents/icons";
 const About: NextPage = () => {
   return (

@@ -23,4 +23,4 @@ const TitleTyping = (props: TitleType): JSX.Element => {
   );
 };
 
-export { TitleTyping };
+export default TitleTyping;

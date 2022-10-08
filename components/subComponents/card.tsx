@@ -1,9 +1,9 @@
-import { images, Projects } from "../../interfaces/interface";
-import { Button, Card } from "react-bootstrap";
+import { Projects } from "../../interfaces/interface";
+import { Card } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 
-export const Cards = (props: Projects) => {
+const Cards = (props: Projects) => {
   return (
     <div>
       <Link href={props.url}>
@@ -17,9 +17,10 @@ export const Cards = (props: Projects) => {
                 {" "}
                 {props.lenguages.map((response) => (
                   <Image
+                    width={"1.6em"}
+                    height={"20%"}
                     key={response}
                     className="m-3"
-                    style={{ width: "1.6em" }}
                     src={`/icons/${response}.svg`}
                     alt={response}
                   />
@@ -32,3 +33,5 @@ export const Cards = (props: Projects) => {
     </div>
   );
 };
+
+export default Cards;
