@@ -1,7 +1,6 @@
 import { Projects } from "../../interfaces/interface";
 import { Card } from "react-bootstrap";
 import Link from "next/link";
-import Image from "next/image";
 
 const Cards = (props: Projects) => {
   return (
@@ -16,9 +15,8 @@ const Cards = (props: Projects) => {
               <Card.Text>
                 {" "}
                 {props.lenguages.map((response) => (
-                  <Image
-                    width={"1.6em"}
-                    height={"20%"}
+                  <img
+                    style={{ width: "1.6em" }}
                     key={response}
                     className="m-3"
                     src={`/icons/${response}.svg`}
