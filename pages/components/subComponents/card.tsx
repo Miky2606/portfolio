@@ -1,6 +1,7 @@
 import { images, Projects } from "../../interfaces/interface";
 import { Button, Card } from "react-bootstrap";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Cards = (props: Projects) => {
   return (
@@ -15,7 +16,7 @@ export const Cards = (props: Projects) => {
               <Card.Text>
                 {" "}
                 {props.lenguages.map((response) => (
-                  <img
+                  <Image
                     key={response}
                     className="m-3"
                     style={{ width: "1.6em" }}

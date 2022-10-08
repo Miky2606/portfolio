@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { skill } from "../interfaces/interface";
 import Section from "../Layouts/section";
 import { TitleTyping } from "./subComponents/title";
+import Image from "next/image";
 
 const Skills = (): JSX.Element => {
   return (
@@ -12,7 +13,7 @@ const Skills = (): JSX.Element => {
           <Row>
             <Col sm="6" md="12" lg="12" className="skills-glass">
               {skill.map((res) => (
-                <img
+                <Image
                   key={res}
                   className="m-3"
                   style={{ width: "5em" }}
