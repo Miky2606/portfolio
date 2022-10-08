@@ -4,21 +4,30 @@ import Link from "next/link";
 
 export const Cards = (props: Projects) => {
   return (
-    <>
-      <Link href="">
-        <a>
-          <Card style={{ width: "18rem" }} className="cards">
-            <Card.Img variant="top" src={images} />
+    <div>
+      <Link href={props.url}>
+        <a target="_blank">
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src={props.images} />
             <Card.Body>
               <Card.Title>{props.name}</Card.Title>
+
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                {" "}
+                {props.lenguages.map((response) => (
+                  <img
+                    key={response}
+                    className="m-3"
+                    style={{ width: "1.6em" }}
+                    src={`/icons/${response}.svg`}
+                    alt={response}
+                  />
+                ))}
               </Card.Text>
             </Card.Body>
           </Card>
         </a>
       </Link>
-    </>
+    </div>
   );
 };

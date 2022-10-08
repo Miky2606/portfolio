@@ -7,21 +7,30 @@ export type Projects = {
 
 
 
+
+
+
+
+
 export const projects: Projects[] = [
     {
-        name: "Azula",
-        url: "ghgfh",
+        name: "AzulaTCG",
+        url: "https://azulatcg-54ggm.ondigitalocean.app/",
         lenguages: ["react", "bootstrap", "mongodb"],
-        images: "ghghj"
+        images: "/imgs/azula.png"
 
     },
     {
-        name: "Azula2",
-        url: "ghgfh",
-        lenguages: ["react", "mongodb"],
-        images: "ghghj"
+        name: "AzulaTCG",
+        url: "https://azulatcg-54ggm.ondigitalocean.app/",
+        lenguages: ["react", "bootstrap", "mongodb"],
+        images: "/imgs/azula.png"
 
     }
 ]
 
-export const images: string = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+export const skill:string[] =[
+"react", "bootstrap", "css", "ts", "swift", "js", "html", "mongodb", "nextjs"
+]
+
+export const images: string = "/perfil.jpg"

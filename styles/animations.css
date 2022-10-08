@@ -1,0 +1,18 @@
+.title{
+    
+    white-space: nowrap;
+    border-right: 4px solid;
+    text-align: center;
+ 
+    overflow: hidden;
+}
+
+@keyframes type {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {border-color: transparent;}
+}

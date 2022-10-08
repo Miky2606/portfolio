@@ -16,32 +16,37 @@ body {
 }
 
 .section {
+  position: sticky;
   width: 100%;
   height: 100vh;
-  position: sticky;
   top: 0;
-  background-size: cover;
   font-family: Hacked;
+
+
 }
 
 .arrow-down {
-  font-size: 1.5em;
+  font-size: 2em;
   color: rgba(0, 0, 0, 0.5);
-  animation: arrow 3s infinite ease;
+  animation: arrow-down 3s infinite ease;
 }
+
+
 .icons {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
-.github {
-  color: black;
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  font-family: Hacked;
 }
 
-.instagram {
-  color: rgb(240, 94, 118);
-}
 
-@keyframes arrow {
+@keyframes arrow-down {
   from {
     transform: translate(0, 0px);
     opacity: 0;
@@ -52,3 +57,4 @@ body {
     opacity: 1;
   }
 }
+

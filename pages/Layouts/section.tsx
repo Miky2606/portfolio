@@ -5,7 +5,11 @@ const Section: FC<LayoutProps> = ({ children, background }) => {
   return (
     <>
       <section
-        style={{ background: background }}
+        style={{
+          background: background,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
         className="section d-flex  justify-content-center align-items-center"
       >
         {children}

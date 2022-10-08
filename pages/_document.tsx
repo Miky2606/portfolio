@@ -4,7 +4,23 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Hola</title>
+        <meta name="description" content="Jonathan Garcia Portfolio" />
+        <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="touch-icon-ipad.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="touch-icon-iphone-retina.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="167x167"
+          href="touch-icon-ipad-retina.png"
+        ></link>
       </Head>
       <body>
         <Main />
