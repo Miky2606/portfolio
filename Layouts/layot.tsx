@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { FC } from "react";
 import Footer from "./footer";
 
@@ -9,6 +10,9 @@ export type LayoutProps = {
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
+      <Head>
+        <title>Jonathan Garcia</title>
+      </Head>
       <main>{children}</main>
       <Footer />
     </>

@@ -16,6 +16,7 @@ export default function Document() {
           sizes="180x180"
           href="touch-icon-iphone-retina.png"
         />
+        <link rel="icon" href="/imgs/icon.png" />
         <link
           rel="apple-touch-icon"
           sizes="167x167"

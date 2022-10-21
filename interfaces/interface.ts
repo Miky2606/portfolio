@@ -14,16 +14,16 @@
 
     },
     {
-        name: "AzulaTCG",
+        name: "Rick&Morty App",
         url: "https://azulatcg-54ggm.ondigitalocean.app/",
-        lenguages: ["react", "bootstrap", "mongodb"],
-        images: "/imgs/azula.png"
+        lenguages: ["flutter"],
+        images: "/imgs/rick.jpg"
 
     }
 ]
 
  export const skill:string[] =[
-"react", "bootstrap", "css", "ts", "swift", "js", "html", "mongodb", "nextjs"
+"react","flutter", "bootstrap", "css", "ts", "swift", "js", "html", "mongodb", "nextjs"
 ]
 
  export const images: string = "/perfil.jpg"

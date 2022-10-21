@@ -8,7 +8,11 @@ const Cards = (props: Projects) => {
       <Link href={props.url}>
         <a target="_blank">
           <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={props.images} />
+            <Card.Img
+              variant="top"
+              src={props.images}
+              height="200px !important"
+            />
             <Card.Body>
               <Card.Title>{props.name}</Card.Title>
 
@@ -16,7 +20,7 @@ const Cards = (props: Projects) => {
                 {" "}
                 {props.lenguages.map((response) => (
                   <img
-                    style={{ width: "1.6em" }}
+                    style={{ width: "1.5em" }}
                     key={response}
                     className="m-3"
                     src={`/icons/${response}.svg`}

@@ -13,7 +13,6 @@ interface Size {
 }
 
 const Projects: NextPage = () => {
-  var random = Math.floor(Math.random() * projects.length);
   const [size, setSize] = useState<Size>();
   const resizeHanlder = () => {
     const width = window.innerWidth;
@@ -38,17 +37,9 @@ const Projects: NextPage = () => {
           <TitleTyping fontSize="60px" text="Projects" />
           <Row>
             {!size ||
-            Math.min(size.width, size.height) <= 500 ||
-            projects.length > 1 ? (
-              <Col
-                sm="12"
-                md="6"
-                lg="4"
-                className="py-3 text-center "
-                key={projects[random].name}
-              >
-                <Cards {...projects[random]} />
-              </Col>
+            (Math.min(size.width, size.height) <= 500 &&
+              projects.length > 1) ? (
+              <ProjectsMobile />
             ) : (
               projects.map((value: Projects, index: number) => {
                 return (
@@ -66,26 +57,41 @@ const Projects: NextPage = () => {
             )}
           </Row>
 
-          {projects.length > 4 ||
-          !size ||
-          Math.min(size?.width, size.height) <= 500 ? (
-            <Link href="https://github.com/Miky2606">
-              <a target="_blank">
-                <Button
-                  style={{ width: "40%" }}
-                  className="btn btn-info text-dark m-2"
-                >
-                  View More
-                </Button>
-              </a>
-            </Link>
-          ) : (
-            <></>
-          )}
+          {projects.length > 4 ? <ButtonProjects /> : <></>}
         </Container>
       </Section>
     </>
   );
 };
 
+const ProjectsMobile = (): JSX.Element => {
+  var random = Math.floor(Math.random() * projects.length);
+  return (
+    <>
+      <Col
+        sm="12"
+        md="6"
+        lg="4"
+        className="py-3 text-center "
+        key={projects[random].name}
+      >
+        <Cards {...projects[random]} />
+      </Col>
+
+      <ButtonProjects />
+    </>
+  );
+};
+
+const ButtonProjects = (): JSX.Element => {
+  return (
+    <Link href="https://github.com/Miky2606">
+      <a target="_blank">
+        <Button style={{ width: "40%" }} className="btn btn-info text-dark m-2">
+          View More
+        </Button>
+      </a>
+    </Link>
+  );
+};
 export default Projects;
