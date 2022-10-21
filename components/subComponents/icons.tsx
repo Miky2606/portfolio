@@ -4,7 +4,6 @@ import { FaGithub, FaLinkedin, FaTwitch } from "react-icons/fa";
 const Icons = () => {
   return (
     <div className="icons">
-      <span style={{ color: "purple" }}>Social :</span>
       <Link href="https://github.com/Miky2606">
         <a target="_blank">
           <FaGithub className=" m-2" color="black" />
