@@ -7,57 +7,36 @@ import Section from "../Layouts/section";
 import Cards from "./subComponents/card";
 import TitleTyping from "./subComponents/title";
 
-interface Size {
-  width: number;
-  height: number;
-}
-
 const Projects: NextPage = () => {
-  const [size, setSize] = useState<Size>();
-  const resizeHanlder = () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    setSize({
-      width: width,
-      height: height,
-    });
-  };
-  useEffect(() => {
-    window.addEventListener("resize", resizeHanlder);
-
-    return () => {
-      window.removeEventListener("resize", resizeHanlder);
-    };
-  }, []);
   return (
     <>
       <Section background="url(/imgs/back2.svg)">
         <Container className="text-center m-5   ">
           <TitleTyping fontSize="60px" text="Projects" />
           <Row>
-            {!size ||
-            (Math.min(size.width, size.height) <= 500 &&
-              projects.length > 1) ? (
-              <ProjectsMobile />
-            ) : (
-              projects.map((value: Projects, index: number) => {
-                return (
-                  <Col
-                    sm="12"
-                    md="6"
-                    lg="4"
-                    className="py-3 text-center "
-                    key={index}
-                  >
-                    <Cards {...value} />
-                  </Col>
-                );
-              })
-            )}
-          </Row>
+            <ProjectsMobile />
 
-          {projects.length > 4 ? <ButtonProjects /> : <></>}
+            {projects.map((value: Projects, index: number) => {
+              return (
+                <Col
+                  sm="12"
+                  md="6"
+                  lg="4"
+                  className="py-3 text-center other-device"
+                  key={index}
+                >
+                  <Cards {...value} />
+                </Col>
+              );
+            })}
+          </Row>
+          {projects.length > 4 ? (
+            <div className="other-device">
+              <ButtonProjects />{" "}
+            </div>
+          ) : (
+            <></>
+          )}
         </Container>
       </Section>
     </>
@@ -67,19 +46,19 @@ const Projects: NextPage = () => {
 const ProjectsMobile = (): JSX.Element => {
   var random = Math.floor(Math.random() * projects.length);
   return (
-    <>
+    <div className="mobile">
       <Col
         sm="12"
         md="6"
         lg="4"
-        className="py-3 text-center "
+        className="py-3 text-center  "
         key={projects[random].name}
       >
         <Cards {...projects[random]} />
       </Col>
 
       <ButtonProjects />
-    </>
+    </div>
   );
 };
 
