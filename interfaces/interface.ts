@@ -1,6 +1,7 @@
   export interface Projects {
     name: string,
-    url: string,
+    url?: string,
+    apk?:string,
     lenguages: string[],
     images: string
 }
@@ -15,7 +16,7 @@
     },
     {
         name: "Rick&Morty App",
-        url: "https://azulatcg-54ggm.ondigitalocean.app/",
+        apk: "app-release.apk",
         lenguages: ["flutter"],
         images: "/imgs/rick.jpg"
 
