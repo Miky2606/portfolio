@@ -25,11 +25,7 @@ body {
 
 }
 
-.arrow-down {
-  font-size: 2em;
-  color: rgba(0, 0, 0, 0.5);
-  animation: arrow-down 3s infinite ease;
-}
+
 
 
 .icons {
@@ -45,16 +41,22 @@ footer{
   font-family: Hacked;
 }
 
-
-@keyframes arrow-down {
-  from {
-    transform: translate(0, 0px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translate(0, 20px);
-    opacity: 1;
-  }
+.capsule{
+  display: flex;
+  justify-content: center;
+  animation: ease;
+ 
+}
+.circle {
+  display: flex;
+  width: 10px !important;
+  height: 10px;
+  border-radius: 50%;
+  margin: 2px;
+  background-color: #0000002b;
+  animation: 0.5s ease;
 }
 
+.active{
+  background-color: rgba(5, 5, 5, 0.74);
+}

@@ -1,11 +1,12 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { Container, Row, Col, Button, Carousel } from "react-bootstrap";
 import { Projects, projects } from "../interfaces/interface";
 import Section from "../Layouts/section";
 import Cards from "./subComponents/card";
 import TitleTyping from "./subComponents/title";
+import { useEffect, useState } from "react";
 
 const Projects: NextPage = () => {
   return (
@@ -31,7 +32,7 @@ const Projects: NextPage = () => {
             })}
           </Row>
           {projects.length > 4 ? (
-            <div className="other-device">
+            <div>
               <ButtonProjects />{" "}
             </div>
           ) : (
@@ -44,7 +45,23 @@ const Projects: NextPage = () => {
 };
 
 const ProjectsMobile = (): JSX.Element => {
-  var random = Math.floor(Math.random() * projects.length);
+  const [index, setIndex] = useState<number>(0);
+
+  const change = (select: string) => {
+    if (select === "prev" && index > 0) {
+      if (index <= 0) {
+        return setIndex(projects.length);
+      }
+      return setIndex(index - 1);
+    }
+
+    if (index + 1 >= projects.length) {
+      return setIndex(0);
+    }
+
+    return setIndex(index + 1);
+  };
+
   return (
     <div className="mobile">
       <Col
@@ -52,12 +69,38 @@ const ProjectsMobile = (): JSX.Element => {
         md="6"
         lg="4"
         className="py-3 text-center  "
-        key={projects[random].name}
+        key={projects[index].name}
       >
-        <Cards {...projects[random]} />
-      </Col>
+        <Cards {...projects[index]} />
 
-      <ButtonProjects />
+        <Row style={{ padding: "12px" }}>
+          <Col xs="4">
+            <FaArrowLeft
+              className="arrow-left"
+              onClick={() => change("prev")}
+            />
+          </Col>
+
+          <Col xs="4">
+            <div className="capsule">
+              {projects.map((e: Projects, indexMap: number) => {
+                return (
+                  <div
+                    className={index === indexMap ? "circle active" : "circle"}
+                  ></div>
+                );
+              })}
+            </div>
+          </Col>
+
+          <Col xs="4">
+            <FaArrowRight
+              className="arrow-right"
+              onClick={() => change("next")}
+            />
+          </Col>
+        </Row>
+      </Col>
     </div>
   );
 };
