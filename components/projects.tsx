@@ -86,6 +86,7 @@ const ProjectsMobile = (): JSX.Element => {
               {projects.map((e: Projects, indexMap: number) => {
                 return (
                   <div
+                    key={e.name}
                     className={index === indexMap ? "circle active" : "circle"}
                   ></div>
                 );

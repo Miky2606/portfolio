@@ -1,20 +1,19 @@
-import { Projects } from "../../interfaces/interface";
+import { App, Projects } from "../../interfaces/interface";
 import { Card } from "react-bootstrap";
 import Link from "next/link";
+import { FaAndroid, FaApple } from "react-icons/fa";
 
 const Cards = (props: Projects) => {
   return (
     <div>
-      {props.url! != undefined ? (
+      {props.url !== undefined ? (
         <Link href={props.url!}>
           <a target="_blank">
             <CardView {...props} />
           </a>
         </Link>
       ) : (
-        <a href={`/apk/${props.apk!}`} download>
-          <CardView {...props} />
-        </a>
+        <CardView {...props} />
       )}
     </div>
   );
@@ -38,6 +37,19 @@ const CardView = (props: Projects): JSX.Element => {
               alt={response}
             />
           ))}
+        </Card.Text>
+        <Card.Text>
+          {props.app?.map((e: App) => {
+            return (
+              <a href={`/apk/${e.url}`} download key={e.device}>
+                {e.device === "android" ? (
+                  <FaAndroid style={{ fontSize: "1.5rem", color: "green" }} />
+                ) : (
+                  <FaApple />
+                )}
+              </a>
+            );
+          })}
         </Card.Text>
       </Card.Body>
     </Card>

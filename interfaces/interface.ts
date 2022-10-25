@@ -1,12 +1,17 @@
-  export interface Projects {
+export interface Projects {
     name: string,
     url?: string,
-    apk?:string,
+    app?: App[],
     lenguages: string[],
     images: string
 }
 
- export const projects: Projects[] = [
+export interface App {
+    device: string,
+    url: string
+}
+
+export const projects: Projects[] = [
     {
         name: "AzulaTCG",
         url: "https://azulatcg-54ggm.ondigitalocean.app/",
@@ -14,19 +19,22 @@
         images: "/imgs/azula.png"
 
     },
+
     {
         name: "Rick&Morty App",
-        apk: "app-release.apk",
+        app: [{
+            device: "android",
+            url: "app-release.apk"
+        }],
         lenguages: ["flutter"],
         images: "/imgs/rick.jpg"
 
     }
 ]
 
- export const skill:string[] =[
-"react","flutter", "bootstrap", "css", "ts", "swift", "js", "html", "mongodb", "nextjs"
+export const skill: string[] = [
+    "react", "flutter", "bootstrap", "css", "ts", "swift", "js", "html", "mongodb", "nextjs"
 ]
 
- export const images: string = "/perfil.jpg"
+export const images: string = "/perfil.jpg"
 
- 
