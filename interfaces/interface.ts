@@ -20,7 +20,7 @@ export const projects: Projects[] = [
   },
   {
     name: "MinyPlayground",
-    url: "https://minyplayground-sdi4-7jwxd1m4b-miky2606.vercel.app/",
+    url: "https://www.miniplayground.online/",
     lenguages: ["react", "tailwind"],
     images: "/imgs/minyplayground.png",
   },
