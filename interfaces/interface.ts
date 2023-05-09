@@ -13,10 +13,10 @@ export interface App {
 
 export const projects: Projects[] = [
   {
-    name: "AzulaTCG",
-    url: "https://azulatcg-54ggm.ondigitalocean.app/",
-    lenguages: ["react", "bootstrap", "mongodb"],
-    images: "/imgs/azula.png",
+    name: "LazyTemp",
+    url: "https://www.lazytemp.com/",
+    lenguages: ["react", "tailwind", "firebase"],
+    images: "/imgs/lazytemp.png",
   },
   {
     name: "MinyPlayground",
@@ -49,6 +49,7 @@ export const skill: string[] = [
   "html",
   "mongodb",
   "nextjs",
+  "firebase"
 ];
 
 export const images: string = "/perfil.jpg";
