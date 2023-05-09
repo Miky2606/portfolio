@@ -11,7 +11,11 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Jonathan Garcia</title>
+        <title>
+          Jonathan Garcia a full-stack developer. Passionate about creating new
+          things and full of ideas and eager to learn more about this exciting
+          world of programming
+        </title>
       </Head>
       <main>{children}</main>
       <Footer />
